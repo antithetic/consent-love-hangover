@@ -1,4 +1,5 @@
 import { Settings } from "lucide-react";
+import { EarthGlobeIcon, ComposeSparklesIcon } from '@sanity/icons'
 import { defineField, defineType } from "sanity";
 
 export const settingsPage = defineType({ 
@@ -14,10 +15,12 @@ export const settingsPage = defineType({
             default: true,
             name: 'meta',
             title: 'Meta',
+            icon: EarthGlobeIcon,
         },
         {
             name: 'style',
             title: 'Style',
+            icon: ComposeSparklesIcon,
         }
     ],
     fields: [

@@ -20,6 +20,9 @@ importers:
       '@sanity/client':
         specifier: ^6.29.1
         version: 6.29.1(debug@4.4.1)
+      '@sanity/icons':
+        specifier: ^3.7.0
+        version: 3.7.0(react@19.1.0)
       '@sanity/vision':
         specifier: ^3.89.0
         version: 3.89.0(@babel/runtime@7.27.1)(@codemirror/lint@6.8.5)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(codemirror@6.0.1)(react-dom@19.1.0(react@19.1.0))(react-is@19.1.0)(react@19.1.0)(styled-components@6.1.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
