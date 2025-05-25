@@ -12,7 +12,7 @@ export const settingsPage = defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'Site Title',
+            title: 'Page Title',
             type:'string',
 
         }),
@@ -26,12 +26,6 @@ export const settingsPage = defineType({
             name: 'siteImage',
             title: 'Meta Image',
             type: 'image',
-
-        }),
-        defineField({
-            name: 'seo',
-            title: 'SEO',
-            type: 'seoMetaFields'
         })
     ]
 

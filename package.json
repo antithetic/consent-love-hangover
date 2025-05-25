@@ -26,6 +26,7 @@
     "sanity-plugin-media": "^3.0.2",
     "sanity-plugin-seo": "^1.3.0",
     "sanity-plugin-singleton-tools": "^1.1.0",
+    "sanity-plugin-tags": "^2.1.1",
     "sanity-plugin-user-select-input": "^2.0.1",
     "styled-components": "^6.1.18"
   }
