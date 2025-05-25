@@ -6,6 +6,7 @@ import {media} from 'sanity-plugin-media'
 import { schema } from './src/sanity/schemaTypes'
 import {visionTool} from '@sanity/vision'
 import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
+import {userSelect} from 'sanity-plugin-user-select-input'
 
 
 
@@ -20,7 +21,8 @@ export default defineConfig({
     structureTool(), 
     media(),
     visionTool(),
-    imageAssetPickerPlugin()
+    imageAssetPickerPlugin(),
+    userSelect()
   ],
   schema,
 });
