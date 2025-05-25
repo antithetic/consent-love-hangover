@@ -9,26 +9,55 @@ export const settingsPage = defineType({
     options: {
         singleton: true,
     },
+    groups: [ 
+        {
+            default: true,
+            name: 'meta',
+            title: 'Meta',
+        },
+        {
+            name: 'style',
+            title: 'Style',
+        }
+    ],
     fields: [
         // General site info
         defineField({
+            group: 'meta',
             name: 'title',
             title: 'Page Title',
             type:'string',
+            readOnly: true,
+            hidden: true,
 
         }),
         defineField({
+            group: 'meta',
+            name: 'siteTitle',
+            title: 'Website Title',
+            type: 'string',
+        }),
+        defineField({
+            group: 'meta',
+            name:'siteSubtitle',
+            title: 'Website Subtitle',
+            type: 'string',
+        }),
+        defineField({
+            group: 'meta',
             name: 'description',
             title: 'Description',
             type: 'text',
-            rows: 2,
+            rows: 3,
         }),
         defineField({
+            group: 'meta',
             name: 'siteImage',
             title: 'Meta Image',
             type: 'image',
         }),
         defineField({
+            group: 'meta',
             name: 'siteTags',
             title: 'Site tags',
             type: 'array',
@@ -42,10 +71,17 @@ export const settingsPage = defineType({
         }),
         // Site Styles
         defineField({
+            group: 'style',
             name: 'backgroundColor',
             title: 'Background Color',
             type: 'simplerColor',
-        })    
+        }),
+        defineField({
+            group: 'style',
+            name: 'textColor',
+            title: 'Text Color',
+            type: 'simplerColor',
+        }) 
     ]
 
 })

@@ -33,7 +33,9 @@ export default defineConfig({
     imageAssetPickerPlugin(),
     userSelect(),
     singletonTools(),
+    //  simplerColor visual editing issue 
+    // https://github.com/cositehq/sanity-plugin-simpler-color-input/issues/11
     simplerColorInput(),
-  ],
+    ],
   schema,
 });
