@@ -3,7 +3,7 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { ScanEye } from 'lucide-react'
 import {media} from 'sanity-plugin-media'
-import {schemaTypes} from './schemaTypes'
+import { schema } from "./src/sanity/schemaTypes";
 
 
 
@@ -18,7 +18,5 @@ export default defineConfig({
     structureTool(), 
     media()
   ],
-  schema: {
-    types: schemaTypes,
-  },
+  schema,
 });
