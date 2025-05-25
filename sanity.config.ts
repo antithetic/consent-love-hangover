@@ -7,8 +7,17 @@ import { schema } from './src/sanity/schemaTypes'
 import {visionTool} from '@sanity/vision'
 import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
 import {userSelect} from 'sanity-plugin-user-select-input'
+import { singletonTools } from 'sanity-plugin-singleton-tools'
+import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 
-
+ 
+// Temporary fix for the missing type definition
+// See https://github.com/plsrd/sanity-plugin-singleton-tools/issues/10
+declare module 'sanity-plugin-singleton-tools' {
+  export interface SingletonPluginOptions {
+    singleton?: boolean
+  }
+}
 
 export default defineConfig({
   projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
@@ -22,7 +31,11 @@ export default defineConfig({
     media(),
     visionTool(),
     imageAssetPickerPlugin(),
-    userSelect()
-  ],
+    userSelect(),
+    singletonTools(),
+    //  simplerColor visual editing issue 
+    // https://github.com/cositehq/sanity-plugin-simpler-color-input/issues/11
+    simplerColorInput(),
+    ],
   schema,
 });
