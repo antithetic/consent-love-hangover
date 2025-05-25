@@ -10,6 +10,7 @@ import {userSelect} from 'sanity-plugin-user-select-input'
 import { singletonTools } from 'sanity-plugin-singleton-tools'
 import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 // import {tags} from 'sanity-plugin-tags'
+import {linkField} from 'sanity-plugin-link-field'
 
  
 // Temporary fix for the missing type definition
@@ -36,7 +37,9 @@ export default defineConfig({
     singletonTools(),
     //  TODO: Temporary workaround for simplerColorInput visual editing issue – see https://github.com/cositehq/sanity-plugin-simpler-color-input/issues/11
     simplerColorInput(),
+    //  TODO: Resolve tag plugin issue
     // tags()
+    link()
     ],
   schema,
 });
