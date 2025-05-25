@@ -10,6 +10,7 @@ export const settingsPage = defineType({
         singleton: true,
     },
     fields: [
+        // General site info
         defineField({
             name: 'title',
             title: 'Page Title',
@@ -38,7 +39,13 @@ export const settingsPage = defineType({
                 layout: 'tags',
             },
             validation: Rule => Rule.unique(),
-        })
+        }),
+        // Site Styles
+        defineField({
+            name: 'backgroundColor',
+            title: 'Background Color',
+            type: 'simplerColor',
+        })    
     ]
 
 })

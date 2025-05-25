@@ -8,6 +8,7 @@ import {visionTool} from '@sanity/vision'
 import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
 import {userSelect} from 'sanity-plugin-user-select-input'
 import { singletonTools } from 'sanity-plugin-singleton-tools'
+import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 
  
 // Temporary fix for the missing type definition
@@ -32,6 +33,7 @@ export default defineConfig({
     imageAssetPickerPlugin(),
     userSelect(),
     singletonTools(),
+    simplerColorInput(),
   ],
   schema,
 });
