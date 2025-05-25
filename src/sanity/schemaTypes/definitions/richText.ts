@@ -20,18 +20,18 @@ const richTextMembers = [
     ],
     marks: {
       annotations: [
-        // {
-        //   name: "customLink",
-        //   type: "object",
-        //   title: "Internal/External Link",
-        //   icon: LinkIcon,
-        //   fields: [
-        //     defineField({
-        //       name: "customLink",
-        //       type: "customUrl",
-        //     }),
-        //   ],
-        // },
+        {
+          name: "customLink",
+          type: "object",
+          title: "Internal/External Link",
+          icon: LinkIcon,
+          fields: [
+            defineField({
+              name: "customLink",
+              type: "customUrl",
+            }),
+          ],
+        },
       ],
       decorators: [
         { title: "Strong", value: "strong" },

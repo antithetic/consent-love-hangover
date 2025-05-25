@@ -4,12 +4,14 @@ import { settingsPage } from './documents/settingsPage'
 import { pageType } from './documents/pageType'
 
 // objects
-import { metadataType } from './objects/metadataType'
+import { metadataType } from './objects/metadata'
+
+// definitions
+import { pageBuilder } from './definitions/pageBuilder'
 
 //  Blocks
-import { richText
+import { richText } from './blocks/richText'
 
- } from './blocks/richtext'
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
         // Documents
@@ -21,6 +23,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
         // Objects
         metadataType,
+
+        // definitions
+        pageBuilder,
 
         // Blocks
         richText,

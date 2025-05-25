@@ -1,7 +1,7 @@
 import { StickyNote } from 'lucide-react'
-import {EarthGlobeIcon} from '@sanity/icons'
-import {BlockElementIcon} from '@sanity/icons'
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity'
+import { GROUP, GROUPS } from '../../utils/const'
+import { pageBuilderField } from '../common'
 
 export const pageType = defineType({
     name: 'page',
@@ -9,19 +9,8 @@ export const pageType = defineType({
     type: 'document',
     description: 
         'Create a new page for your website, like an "About Us" or "Contact" page. Each page has its own web address and content that you can customize',
-
+    groups: GROUPS,
     icon: StickyNote,
-    groups: [
-        { 
-            default: true,
-            name: 'content',
-            icon: BlockElementIcon
-        }, 
-        { 
-            name: 'metadata',
-            icon: EarthGlobeIcon
-        }
-    ],
     fields: [
         defineField({
             name: 'title',
@@ -29,14 +18,15 @@ export const pageType = defineType({
             type: 'string',
             description: 
                 'The main heading that appears at the top of your page and in browser tabs',
-            group: 'content',
+            group: GROUP.CONTENT,
             validation: (Rule) => Rule.required(),
         }),
+        pageBuilderField,
         defineField({
             name: 'metadata',
             title: 'Metadata',
             type: 'metadata',
-            group: 'metadata'
+            group: GROUP.META
         })
     ],
     preview: {
