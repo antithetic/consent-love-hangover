@@ -2,6 +2,7 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { ScanEye } from 'lucide-react'
+import {media} from 'sanity-plugin-media'
 
 
 export default defineConfig({
@@ -11,7 +12,10 @@ export default defineConfig({
   title: 'Love Hangover',
   subtitle: 'consent studio',
   icon: ScanEye,
-  plugins: [structureTool()],
+  plugins: [
+    structureTool(), 
+    media()
+  ],
   schema: {
     types: [],
   },
