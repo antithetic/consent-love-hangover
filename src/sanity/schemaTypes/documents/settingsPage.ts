@@ -7,7 +7,7 @@ export const settingsPage = defineType({
     type: 'document',
     icon: Settings,
     options: {
-        // singleton: true,
+        singleton: true,
     },
     fields: [
         defineField({
@@ -15,6 +15,23 @@ export const settingsPage = defineType({
             title: 'Site Title',
             type:'string',
 
+        }),
+        defineField({
+            name: 'description',
+            title: 'Description',
+            type: 'text',
+            rows: 2,
+        }),
+        defineField({
+            name: 'siteImage',
+            title: 'Meta Image',
+            type: 'image',
+
+        }),
+        defineField({
+            name: 'seo',
+            title: 'SEO',
+            type: 'seoMetaFields'
         })
     ]
 
