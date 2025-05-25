@@ -6,7 +6,10 @@ import { pageType } from './documents/pageType'
 // objects
 import { metadataType } from './objects/metadataType'
 
- 
+//  Blocks
+import { richText
+
+ } from './blocks/richtext'
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
         // Documents
@@ -18,6 +21,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
         // Objects
         metadataType,
+
+        // Blocks
+        richText,
 
     ]
   };
