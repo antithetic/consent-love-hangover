@@ -45,7 +45,5 @@ export const metadataType = defineType({
                 metadata: ['lqip'],
             }
         }),
-        
-        
     ]
 })
