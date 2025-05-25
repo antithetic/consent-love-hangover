@@ -1,10 +1,11 @@
-import { defineArrayMember, defineField, defineType } from 'sanity'
-// import { imageBlock } from '../definitions'
+import {  defineField, defineType } from 'sanity'
+import {DocumentTextIcon} from '@sanity/icons'
 import { getBlockText } from 'sanitypress-utils'
 
 export const richText = defineType({
 	name: 'richText',
 	title: 'Rich Text',
+	icon: DocumentTextIcon,
 	type: 'object',
 	groups: [
 		{ name: 'content', title: 'Content', default: true },
@@ -22,14 +23,6 @@ export const richText = defineType({
 			type: 'array',
 			of: [
 				{ type: 'block' },
-				// defineArrayMember({
-				// 	title: 'Code block',
-				// 	type: 'code',
-				// 	options: {
-				// 		withFilename: true,
-				// 	},
-				// }),
-				// { type: 'custom-html' },
 			],
 			group: 'content',
 		}),
@@ -64,7 +57,8 @@ export const richText = defineType({
 		},
 		prepare: ({ content }) => ({
 			title: getBlockText(content),
-			subtitle: 'Richtext module',
+			subtitle: 'Rich Text',
+			media: DocumentTextIcon,
 		}),
 	},
 })

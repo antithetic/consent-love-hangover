@@ -29,6 +29,5 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
         // Blocks
         richText,
-
     ]
   };
