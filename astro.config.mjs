@@ -10,12 +10,12 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   integrations: [
     sanity({
-      projectId: '6ziojjbn',
-      dataset: 'production',
+      projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID || '6ziojjbn',
+      dataset: import.meta.env.PUBLIC_SANITY_DATASET || 'production',
       useCdn: false,
       apiVersion: '2025-05-24',
       studioBasePath: '/studio'
-    }), 
+    }),
     react()
   ],
 
