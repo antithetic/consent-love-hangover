@@ -84,7 +84,13 @@ export const settingsPage = defineType({
             name: 'textColor',
             title: 'Text Color',
             type: 'simplerColor',
-        }) 
+        }),
+        defineField({
+            group: 'style',
+            name: 'linkColor',
+            title: 'Link Color',
+            type: 'simplerColor',
+        })
     ]
 
 })
