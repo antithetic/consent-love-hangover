@@ -33,5 +33,10 @@ export const pageType = defineType({
             type: 'metadata',
             group: 'metadata'
         })
-    ]
+    ],
+    preview: {
+        select: {
+            title: 'title'
+        }
+    }
 })
