@@ -16,12 +16,16 @@ export const metadataType = defineType({
             name: 'title',
             title: 'Title',
             type: 'string',
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'slug',
             title: 'Slug',
             description: 'Website path or permalink',
             type: 'slug',
+            // options: {
+            //     source: (doc: any) => doc.title || doc.metadata.title,
+            // },
             validation: (Rule) => Rule.required(),
         }),
         defineField({
@@ -41,6 +45,7 @@ export const metadataType = defineType({
                 metadata: ['lqip'],
             }
         }),
+        
         
     ]
 })
