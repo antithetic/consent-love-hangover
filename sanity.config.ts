@@ -8,8 +8,7 @@ import {visionTool} from '@sanity/vision'
 import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
 import {userSelect} from 'sanity-plugin-user-select-input'
 import { singletonTools } from 'sanity-plugin-singleton-tools'
-// import { seoMetaFields } from 'sanity-plugin-seo'
-// import {tags} from 'sanity-plugin-tags
+
  
 // Temporary fix for the missing type definition
 // See https://github.com/plsrd/sanity-plugin-singleton-tools/issues/10

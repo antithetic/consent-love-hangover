@@ -26,6 +26,18 @@ export const settingsPage = defineType({
             name: 'siteImage',
             title: 'Meta Image',
             type: 'image',
+        }),
+        defineField({
+            name: 'siteTags',
+            title: 'Site tags',
+            type: 'array',
+            of: [{
+                type: 'string'
+            }],
+            options: {
+                layout: 'tags',
+            },
+            validation: Rule => Rule.unique(),
         })
     ]
 
