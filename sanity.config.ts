@@ -39,7 +39,7 @@ export default defineConfig({
     simplerColorInput(),
     //  TODO: Resolve tag plugin issue
     // tags()
-    link()
+    linkField()
     ],
   schema,
 });
