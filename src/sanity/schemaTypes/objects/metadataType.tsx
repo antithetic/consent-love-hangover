@@ -23,9 +23,9 @@ export const metadataType = defineType({
             title: 'Slug',
             description: 'Website path or permalink',
             type: 'slug',
-            // options: {
-            //     source: (doc: any) => doc.title || doc.metadata.title,
-            // },
+            options: {
+                source: (doc: any) => doc.title || doc.metadata.title,
+            },
             validation: (Rule) => Rule.required(),
         }),
         defineField({
