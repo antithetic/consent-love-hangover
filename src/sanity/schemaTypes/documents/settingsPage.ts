@@ -12,7 +12,7 @@ export const settingsPage = defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'title',
+            title: 'Site Title',
             type:'string',
 
         })
