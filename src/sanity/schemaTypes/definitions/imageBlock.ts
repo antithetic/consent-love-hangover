@@ -36,8 +36,13 @@ export const imageBlock = defineArrayMember({
 		}),
 		defineField({
 			name: 'source',
-			type: 'url',
+			title: 'Source',
+			description: 'Link to internal/external source',
+			type: 'link',
 			fieldset: 'options',
+			options: {
+				enableText: true
+			}
 		}),
 	],
 	preview: {
