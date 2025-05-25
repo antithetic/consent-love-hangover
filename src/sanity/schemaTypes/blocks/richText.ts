@@ -1,8 +1,8 @@
-import {  defineField, defineType } from 'sanity'
+import { defineArrayMember, defineField } from 'sanity'
 import {DocumentTextIcon} from '@sanity/icons'
 import { getBlockText } from 'sanitypress-utils'
 
-export const richText = defineType({
+export const richText = defineArrayMember({
 	name: 'richText',
 	title: 'Rich Text',
 	icon: DocumentTextIcon,

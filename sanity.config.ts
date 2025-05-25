@@ -11,6 +11,7 @@ import { singletonTools } from 'sanity-plugin-singleton-tools'
 import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 // import {tags} from 'sanity-plugin-tags'
 import {linkField} from 'sanity-plugin-link-field'
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 
  
 // Temporary fix for the missing type definition
@@ -39,7 +40,8 @@ export default defineConfig({
     simplerColorInput(),
     //  TODO: Resolve tag plugin issue
     // tags()
-    linkField()
+    linkField(),
+    unsplashImageAsset()
     ],
   schema,
 });
