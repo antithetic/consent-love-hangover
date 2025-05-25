@@ -62,7 +62,7 @@ export const settingsPage = defineType({
         defineField({
             group: 'meta',
             name: 'siteTags',
-            title: 'Site tags',
+            title: 'Website tags',
             type: 'array',
             of: [{
                 type: 'string'
