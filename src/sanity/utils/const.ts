@@ -8,8 +8,8 @@ import {
   import type { FieldGroupDefinition } from "sanity";
   
   export const GROUP = {
-    SEO: "seo",
-    MAIN_CONTENT: "main-content",
+    META: "metadata",
+    CONTENT: "content",
     CARD: "card",
     RELATED: "related",
     OG: "og",
@@ -18,12 +18,12 @@ import {
   export const GROUPS: FieldGroupDefinition[] = [
     // { name: CONST.MAIN_CONTENT, default: true },
     {
-      name: GROUP.MAIN_CONTENT,
+      name: GROUP.CONTENT,
       icon: ComposeIcon,
       title: "Content",
       default: true,
     },
-    { name: GROUP.SEO, icon: SearchIcon, title: "SEO" },
+    { name: GROUP.META, icon: SearchIcon, title: "Metadata" },
     {
       name: GROUP.OG,
       icon: InsertAboveIcon,

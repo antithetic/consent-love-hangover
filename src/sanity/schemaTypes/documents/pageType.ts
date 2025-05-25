@@ -7,6 +7,9 @@ export const pageType = defineType({
     name: 'page',
     title: 'Page',
     type: 'document',
+    description: 
+        'Create a new page for your website, like an "About Us" or "Contact" page. Each page has its own web address and content that you can customize',
+
     icon: StickyNote,
     groups: [
         { 
@@ -22,8 +25,10 @@ export const pageType = defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'Page Title',
+            title: 'Title',
             type: 'string',
+            description: 
+                'The main heading that appears at the top of your page and in browser tabs',
             group: 'content',
             validation: (Rule) => Rule.required(),
         }),

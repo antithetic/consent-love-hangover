@@ -31,6 +31,8 @@ export const metadataType = defineType({
         defineField({
             name: 'description',
             title: 'Description',
+            description: 
+                'A brief summary of what this page is about. This text helps search engines understand your page and may appear in search results.',
             type: 'text',
             rows: 3,
             validation: (Rule) => Rule.max(160).warning(),
@@ -38,7 +40,7 @@ export const metadataType = defineType({
         defineField({
             name: 'image',
             title: 'SEO Image',
-            description: 'Used for social sharing previews',
+            description: 'A main picture for this page that can be used when sharing on social media or in search results',
             type: 'image',
             options: {
                 hotspot: true,
