@@ -7,6 +7,12 @@ export const metadataType = defineType({
     type: 'object',
     fields: [
         defineField({
+            name: 'noIndex',
+            description: 'Prevent search engines from indexing this page',
+            type: 'boolean',
+            initialValue: false
+        }),
+        defineField({
             name: 'title',
             title: 'Title',
             type: 'string',
@@ -35,11 +41,6 @@ export const metadataType = defineType({
                 metadata: ['lqip'],
             }
         }),
-        defineField({
-            name: 'noIndex',
-            description: 'Prevent search engines from indexing this page',
-            type: 'boolean',
-            initialValue: false
-        })
+        
     ]
 })
