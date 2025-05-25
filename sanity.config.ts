@@ -7,6 +7,7 @@ import { schema } from './src/sanity/schemaTypes'
 import {visionTool} from '@sanity/vision'
 import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
 import {userSelect} from 'sanity-plugin-user-select-input'
+import { singletonTools } from 'sanity-plugin-singleton-tools';
 
 
 
@@ -22,7 +23,8 @@ export default defineConfig({
     media(),
     visionTool(),
     imageAssetPickerPlugin(),
-    userSelect()
+    userSelect(),
+    singletonTools()
   ],
   schema,
 });
