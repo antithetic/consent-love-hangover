@@ -4,6 +4,7 @@ import { structureTool } from 'sanity/structure'
 import { ScanEye } from 'lucide-react'
 import {media} from 'sanity-plugin-media'
 import { schema } from './src/sanity/schemaTypes'
+import {visionTool} from '@sanity/vision'
 
 
 
@@ -16,7 +17,8 @@ export default defineConfig({
   icon: ScanEye,
   plugins: [
     structureTool(), 
-    media()
+    media(),
+    visionTool()
   ],
   schema,
 });
