@@ -12,6 +12,7 @@ export default defineConfig({
       dataset: 'production',
       useCdn: false,
       apiVersion: '2025-05-24',
+      studioBasePath: '/studio'
     }), 
     react()
   ]
