@@ -26,6 +26,12 @@ export const pageType = defineType({
             type: 'string',
             group: 'content',
             validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'metadata',
+            title: 'Metadata',
+            type: 'metadata',
+            group: 'metadata'
         })
     ]
 })
