@@ -10,6 +10,13 @@ import {userSelect} from 'sanity-plugin-user-select-input'
 import { singletonTools } from 'sanity-plugin-singleton-tools';
 
 
+// Temporary fix for the missing type definition
+// See https://github.com/plsrd/sanity-plugin-singleton-tools/issues/10
+declare module 'sanity-plugin-singleton-tools' {
+  export interface SingletonPluginOptions {
+    singleton?: boolean
+  }
+}
 
 export default defineConfig({
   projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,

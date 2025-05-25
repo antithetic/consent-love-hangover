@@ -6,6 +6,9 @@ export const settingsPage = defineType({
     title: 'Site Settings',
     type: 'document',
     icon: Settings,
+    options: {
+        // singleton: true,
+    },
     fields: [
         defineField({
             name: 'title',
