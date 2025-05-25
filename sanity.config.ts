@@ -35,6 +35,7 @@ export default defineConfig({
     singletonTools(),
     //  simplerColor visual editing issue 
     // https://github.com/cositehq/sanity-plugin-simpler-color-input/issues/11
+    // TODO: Remove this augmentation when upstream issue is resolved
     simplerColorInput(),
     ],
   schema,

@@ -30,7 +30,6 @@ export const settingsPage = defineType({
             name: 'title',
             title: 'Page Title',
             type:'string',
-            readOnly: true,
             hidden: true,
 
         }),
