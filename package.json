@@ -30,6 +30,7 @@
     "sanity-plugin-singleton-tools": "^1.1.0",
     "sanity-plugin-tags": "^2.1.1",
     "sanity-plugin-user-select-input": "^2.0.1",
+    "sanitypress-utils": "^0.0.6",
     "styled-components": "^6.1.18"
   }
 }
