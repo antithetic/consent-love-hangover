@@ -1,4 +1,4 @@
-// ./src/sanity/schemaTypes/category.ts
+// ./src/sanity/schemaTypes/documents/categoryType.ts
 import { defineField, defineType } from "sanity";
 
 export const categoryType = defineType({
