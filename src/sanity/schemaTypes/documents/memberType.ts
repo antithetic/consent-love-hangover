@@ -44,7 +44,6 @@ export const memberType = defineType({
           ]
         }),
         // Pronouns
-        // pronouns
     defineField({
       name: 'pronouns',
       title: 'Pronouns',
