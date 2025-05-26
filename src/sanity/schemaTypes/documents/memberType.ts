@@ -4,7 +4,7 @@ import { UserIcon, InfoOutlineIcon, LinkIcon, EyeOpenIcon } from '@sanity/icons'
 export const memberType = defineType({
     name: 'member',
     title: 'Member',
-    type: 'object',
+    type: 'document',
     icon: UserIcon,
     groups: [
         {

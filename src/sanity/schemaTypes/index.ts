@@ -3,6 +3,7 @@ import { categoryType } from './documents/categoryType'
 import { settingsPage } from './documents/settingsPage'
 import { pageType } from './documents/pageType'
 import { memberType } from './documents/memberType'
+
 // objects
 import { metadataType } from './objects/metadata'
 
