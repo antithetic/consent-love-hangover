@@ -44,6 +44,13 @@ export const memberType = defineType({
           validation: (Rule) => Rule.required(),
       }),
         defineField({
+          name: 'headline',
+          title: 'Profile Headline',
+          description: 'Quote or headline to be displayed on profile.',
+          group: 'info',
+          type: 'string',
+        }),
+        defineField({
           name: 'bio',
           title: 'Member Bio',
           type: 'array',
