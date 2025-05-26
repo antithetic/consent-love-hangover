@@ -70,6 +70,20 @@ export const memberType = defineType({
           title: 'Project User',
           type: 'userSelect',
           group: 'info',
+        }),
+        //  Social links
+        defineField({
+          name: 'website',
+          title: 'Website',
+          description: 'Link to primary website.',
+          type: 'link',
+          group: 'links'
+        }),
+        defineField({
+          name: 'socialLinks',
+          title: 'Social Links',
+          type: 'link',
+          group: 'links'
         })
     ]
 })
