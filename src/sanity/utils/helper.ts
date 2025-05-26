@@ -67,6 +67,13 @@ import {
     return text.join(" ");
   };
   
+  /**
+   * Splits an array into a specified number of chunks, distributing elements in a round-robin fashion.
+   *
+   * @param array - The array to split.
+   * @param numChunks - The number of chunks to create.
+   * @returns An array containing {@link numChunks} subarrays with elements distributed as evenly as possible.
+   */
   export function splitArray<T>(array: T[], numChunks: number): T[][] {
     const result: T[][] = Array.from({ length: numChunks }, () => []);
     for (let i = 0; i < array.length; i++) {
@@ -81,6 +88,15 @@ import {
     maxDelay?: number;
     onRetry?: (error: Error, attempt: number) => void;
   }
+  /**
+   * Retries a promise-returning function multiple times with exponential backoff delays.
+   *
+   * @param promiseFn - A function that returns a promise to be retried on failure.
+   * @param options - Optional retry configuration, including maximum retries, initial and maximum delay, and a callback for each retry attempt.
+   * @returns The resolved value from {@link promiseFn} if successful.
+   *
+   * @throws {Error} If all retry attempts fail, throws the last encountered error or a generic error if the error is not an instance of {@link Error}.
+   */
   export async function retryPromise<T>(
     promiseFn: () => Promise<T>,
     options: RetryOptions = {},
@@ -120,7 +136,12 @@ import {
   }
   
   /**
-   * Converts a URL pathname to a human-readable title
+   * Converts a URL pathname into a human-readable title.
+   *
+   * Returns "Home" for the root path. For other paths, extracts the last segment, replaces hyphens with spaces, and capitalizes the first letter.
+   *
+   * @param pathname - The URL pathname to convert.
+   * @returns The formatted title string.
    */
   export function pathnameToTitle(pathname: string): string {
     if (pathname === "/") return "Home";
@@ -132,11 +153,24 @@ import {
   }
   
   /**
-   * Builds a tree structure from a list of pages
+   * Constructs a nested tree structure from a flat list of pages based on their slug paths.
+   *
+   * Each intermediate path segment becomes a folder node, while leaf segments become page nodes. Draft pages are detected and marked. The resulting tree organizes pages hierarchically for efficient traversal and lookup.
+   *
+   * @param pages - The list of pages to organize into a tree.
+   * @returns A tree object representing the hierarchical structure of the pages.
    */
   export function buildTree(pages: Page[]): Tree {
     const root: Tree = {};
   
+    /**
+     * Creates a tree node representing either a folder or a page, assigning appropriate metadata and formatting.
+     *
+     * @param item - The page object to base the node on.
+     * @param pathSoFar - The accumulated path for this node.
+     * @param isFolder - Whether the node represents a folder.
+     * @returns A {@link TreeNode} with updated slug, type, title, and children.
+     */
     function createNode(
       item: Page,
       pathSoFar: string,
@@ -153,6 +187,16 @@ import {
       };
     }
   
+    /**
+     * Inserts a page into a tree structure by processing its path segments, creating folder and page nodes as needed.
+     *
+     * @param item - The page to insert into the tree.
+     * @param segments - The path segments representing the page's location.
+     * @param currentFolder - The current tree node to start insertion from.
+     *
+     * @remark
+     * Modifies {@link currentFolder} in place to build out the tree structure.
+     */
     function processSegments(
       item: Page,
       segments: string[],
@@ -190,7 +234,13 @@ import {
   }
   
   /**
-   * Finds the closest tree containing a folder at the given path
+   * Returns the subtree corresponding to the specified folder path within the tree.
+   *
+   * If the path is empty or root ("/"), the root tree is returned. If the path does not exist or does not correspond to a folder, returns the closest matching subtree.
+   *
+   * @param root - The root tree to search within.
+   * @param path - The folder path to locate, using "/" as a separator.
+   * @returns The subtree at the specified path, or the closest matching subtree if the path is not fully found.
    */
   export function findTreeByPath(root: Tree, path?: string): Tree {
     if (!path || path === "/") return root;
@@ -207,11 +257,10 @@ import {
     return currentTree;
   }
   /**
-   * Formats a path string by:
-   * 1. Removing any double slashes (e.g. // -> /)
-   * 2. Ensuring path starts with a single leading slash
-   * 3. Removing trailing slashes
-   * 4. Handling undefined/invalid inputs
+   * Normalizes a path string by removing extra slashes, trimming whitespace, and ensuring a single leading slash.
+   *
+   * @param path - The input path string to normalize.
+   * @returns The normalized path, or "/" if the input is not a valid string.
    */
   export function formatPath(path: string | undefined | null): string {
     if (typeof path !== "string") return "/";
@@ -229,8 +278,12 @@ import {
   }
   
   /**
-   * Gets variations of a path with different slash combinations
-   * Useful for path matching and comparisons
+   * Returns different variations of a path with various combinations of leading and trailing slashes.
+   *
+   * Useful for matching or comparing paths that may be formatted differently.
+   *
+   * @param path - The input path to generate variations for.
+   * @returns An array of path variations with different leading and trailing slashes. Returns an empty array if the input is not a string.
    */
   export function getPathVariations(path: string | undefined): string[] {
     if (typeof path !== "string") return [];
@@ -259,13 +312,13 @@ import {
   }
   
   /**
-   * Converts a string into a valid pathname by:
-   * 1. Converting to lowercase
-   * 2. Replacing spaces with hyphens
-   * 3. Removing invalid characters (only a-z, 0-9, hyphens and slashes allowed)
-   * 4. Normalizing multiple hyphens and slashes
-   * 5. Ensuring leading slash
-   * 6. Optionally allowing trailing slash
+   * Converts an input string into a sanitized pathname suitable for URLs.
+   *
+   * The resulting pathname is lowercased, spaces are replaced with hyphens, only alphanumeric characters, hyphens, and slashes are retained, and redundant hyphens or slashes are normalized. Ensures a single leading slash and, unless explicitly allowed, removes any trailing slash.
+   *
+   * @param input - The string to convert into a pathname.
+   * @param options - Optional settings to allow a trailing slash.
+   * @returns A normalized pathname string beginning with a single slash.
    */
   export function stringToPathname(input: string, options?: PathnameOptions) {
     if (typeof input !== "string") {
@@ -293,6 +346,11 @@ import {
     return `/${withoutTrailingSlash}`.replace(/\/+/g, "/");
   }
   
+  /**
+   * Generates an array of page template configurations for "Page" and "Blog" types, each with a slug parameter.
+   *
+   * @returns An array of template objects, each containing schema type, ID, title, a value function for slug assignment, and slug parameter metadata.
+   */
   export function createPageTemplate() {
     const pages = [
       {
