@@ -1,4 +1,4 @@
-import { StickyNote } from 'lucide-react'
+import {DocumentIcon} from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 import { GROUP, GROUPS } from '../../utils/const'
 import { pageBuilderField } from '../common'
@@ -10,7 +10,7 @@ export const pageType = defineType({
     description: 
         'Create a new page for your website, like an "About Us" or "Contact" page. Each page has its own web address and content that you can customize',
     groups: GROUPS,
-    icon: StickyNote,
+    icon: DocumentIcon,
     fields: [
         defineField({
             name: 'title',
