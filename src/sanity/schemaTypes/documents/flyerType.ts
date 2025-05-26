@@ -32,6 +32,12 @@ export const flyerType = defineType({
         rows: 3,
       }),
       defineField({
+        name: 'artists',
+        title: 'Artists',
+        type: 'reference',
+        to: [{type: 'artist'}],
+      }),
+      defineField({
         type: "string",
         name: "Tags",
         title: "Tags",
