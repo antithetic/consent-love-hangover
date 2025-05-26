@@ -1,6 +1,5 @@
 import { defineType, defineField } from 'sanity'
 import { UserIcon, InfoOutlineIcon, LinkIcon, EyeOpenIcon } from '@sanity/icons'
-import { CircleSmall } from 'lucide-react'
 
 export const memberType = defineType({
     name: 'member',
@@ -33,6 +32,17 @@ export const memberType = defineType({
           type: 'string',
           group: 'info'
         }),
+        defineField({
+          name: 'slug',
+          title: 'Profile Path',
+          description: 'Website path or permalink',
+          group: 'info',
+          type: 'slug',
+          options: {
+              source: 'name'
+          },
+          validation: (Rule) => Rule.required(),
+      }),
         defineField({
           name: 'bio',
           title: 'Member Bio',
@@ -80,6 +90,7 @@ export const memberType = defineType({
         defineField({
           name: 'userId',
           title: 'Project User',
+          description: 'User associated with this member profile.',
           type: 'userSelect',
           group: 'info'
         }),
