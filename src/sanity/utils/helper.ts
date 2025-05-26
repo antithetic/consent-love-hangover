@@ -254,8 +254,12 @@ import {
     return formatPath(document.slug);
   };
   
-  interface PathnameOptions {
+  interface StringToPathnameOptions {
     allowTrailingSlash?: boolean;
+  }
+
+  export function stringToPathname(input: string, options?: StringToPathnameOptions) {
+    // existing implementation...
   }
   
   /**
