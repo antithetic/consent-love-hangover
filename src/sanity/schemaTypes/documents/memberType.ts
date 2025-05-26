@@ -1,5 +1,6 @@
 import { defineType, defineField } from 'sanity'
 import { UserIcon, InfoOutlineIcon, LinkIcon, EyeOpenIcon } from '@sanity/icons'
+import { CircleSmall } from 'lucide-react'
 
 export const memberType = defineType({
     name: 'member',
@@ -87,6 +88,74 @@ export const memberType = defineType({
             })
           ]
         }),
+        // Pronouns
+        // pronouns
+    defineField({
+      name: 'pronouns',
+      title: 'Pronouns',
+      group: 'info',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'type',
+              title: 'Type',
+              type: 'string',
+              options: {
+                list: [
+                  {title: 'He/Him', value: 'he-him'},
+                  {title: 'She/Her', value: 'she-her'},
+                  {title: 'They/Them', value: 'they-them'},
+                  {title: 'Custom', value: 'custom'},
+                ],
+                layout: 'dropdown',
+              },
+              validation: (Rule) => Rule.required().error('Please select a pronoun type'),
+            },
+            {
+              name: 'custom',
+              title: 'Custom Pronouns',
+              type: 'string',
+              description: 'Enter custom pronouns',
+              hidden: ({parent}) => parent?.type !== 'custom',
+              validation: (Rule) =>
+                Rule.custom((value, context) => {
+                  const parent = context.parent as {type?: string}
+                  if (parent?.type === 'custom' && !value) {
+                    return 'Please enter custom pronouns'
+                  }
+                  return true
+                }),
+            },
+          ],
+          preview: {
+            select: {
+              type: 'type',
+              custom: 'custom',
+            },
+            prepare({type, custom}) {
+              // Define the type for our pronounMap
+              const pronounMap: Record<string, string> = {
+                'he-him': 'He/Him',
+                'she-her': 'She/Her',
+                'they-them': 'They/Them',
+                custom: custom || 'Custom',
+              }
+
+              // Use type checking to ensure the key exists
+              const title = type && pronounMap[type] ? pronounMap[type] : 'Unspecified'
+
+              return {
+                title,
+                media: CircleSmall,
+              }
+            },
+          },
+        },
+      ],
+    }),
         defineField({
             name: 'email',
             title: 'Contact Email',
