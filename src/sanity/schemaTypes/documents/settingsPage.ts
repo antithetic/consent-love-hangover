@@ -1,6 +1,6 @@
 import { Settings } from "lucide-react";
 import { EarthGlobeIcon, ComposeSparklesIcon } from '@sanity/icons'
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity'
 
 export const settingsPage = defineType({ 
     name: 'settings',
