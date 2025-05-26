@@ -3,6 +3,9 @@ import { categoryType } from './documents/categoryType'
 import { settingsPage } from './documents/settingsPage'
 import { pageType } from './documents/pageType'
 import { memberType } from './documents/memberType'
+import { flyerArchive } from './documents/flyerArchive'
+import { flyerType } from './documents/flyerType'
+import { artistType } from './documents/artistType'
 // objects
 import { metadataType } from './objects/metadata'
 
@@ -18,6 +21,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
         categoryType,
         pageType,
         memberType,
+        flyerType,
+        flyerArchive,
+        artistType,
 
         // pages
         settingsPage,
