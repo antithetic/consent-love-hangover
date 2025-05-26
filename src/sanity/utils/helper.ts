@@ -6,9 +6,15 @@ import {
 
 import type { Page, Tree, TreeNode } from "./types";
 
+/**
+ * Checks if a URL is relative (starts with /, #, or ?)
+ */
 export const isRelativeUrl = (url: string) =>
   url.startsWith("/") || url.startsWith("#") || url.startsWith("?");
 
+/**
+ * Validates if a string is a valid URL or relative URL
+ */
 export const isValidUrl = (url: string) => {
   try {
     new URL(url);
@@ -19,15 +25,25 @@ export const isValidUrl = (url: string) => {
   }
 };
 
+/**
+ * Capitalizes the first letter of a string
+ */
 export const capitalize = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
+/**
+ * Converts camelCase or PascalCase strings to Title Case with spaces
+ * Example: "firstName" -> "First Name"
+ */
 export const getTitleCase = (name: string) => {
   const titleTemp = name.replace(/([A-Z])/g, " $1");
   return titleTemp.charAt(0).toUpperCase() + titleTemp.slice(1);
 };
 
+/**
+ * Creates a radio list layout configuration for Sanity form fields
+ */
 export const createRadioListLayout = (
   items: Array<string | { title: string; value: string }>,
   options?: StringOptions,
@@ -48,6 +64,11 @@ export const createRadioListLayout = (
   };
 };
 
+/**
+ * Extracts plain text from Sanity portable text content
+ * @param value - The portable text content
+ * @param maxWords - Optional limit on number of words to extract
+ */
 export const parseRichTextToString = (
   value: unknown,
   maxWords: number | undefined = undefined,
@@ -67,6 +88,9 @@ export const parseRichTextToString = (
   return text.join(" ");
 };
 
+/**
+ * Splits an array into a specified number of evenly distributed chunks
+ */
 export function splitArray<T>(array: T[], numChunks: number): T[][] {
   const result: T[][] = Array.from({ length: numChunks }, () => []);
   for (let i = 0; i < array.length; i++) {
@@ -81,6 +105,10 @@ export interface RetryOptions {
   maxDelay?: number;
   onRetry?: (error: Error, attempt: number) => void;
 }
+
+/**
+ * Retries a promise-returning function with exponential backoff
+ */
 export async function retryPromise<T>(
   promiseFn: () => Promise<T>,
   options: RetryOptions = {},
@@ -206,6 +234,7 @@ export function findTreeByPath(root: Tree, path?: string): Tree {
 
   return currentTree;
 }
+
 /**
  * Formats a path string by:
  * 1. Removing any double slashes (e.g. // -> /)
@@ -245,10 +274,16 @@ export function getPathVariations(path: string | undefined): string[] {
   ];
 }
 
+/**
+ * Generates a template name by appending "-with-slug" suffix
+ */
 export const getTemplateName = (template: string) => {
   return `${template}-with-slug`;
 };
 
+/**
+ * Extracts and formats the document path from a Sanity document's slug
+ */
 export const getDocumentPath = (document: SanityDocument) => {
   if (typeof document.slug !== "string") return;
   return formatPath(document.slug);
@@ -293,6 +328,9 @@ export function stringToPathname(input: string, options?: PathnameOptions) {
   return `/${withoutTrailingSlash}`.replace(/\/+/g, "/");
 }
 
+/**
+ * Creates page templates for different content types with dynamic slug parameters
+ */
 export function createPageTemplate() {
   const pages = [
     {
