@@ -1,3 +1,4 @@
-import { pageBuilder } from "./pageBuilder";
+import { pageBuilder } from './pageBuilder'
+import { button } from './button'
 
-export const definitions = [  pageBuilder ]
+export const definitions = [  pageBuilder, button ]
