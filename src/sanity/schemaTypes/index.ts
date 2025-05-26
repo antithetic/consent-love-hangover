@@ -13,7 +13,6 @@ import { richTextContent } from './definitions/richText'
 //  Blocks
 import { richText } from './blocks/richText'
 
-
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
         // Documents
@@ -30,7 +29,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
         pageBuilder,
 
         // Blocks
-        richText,
         richTextContent,
     ]
 };
