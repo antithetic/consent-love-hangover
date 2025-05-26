@@ -34,13 +34,14 @@ export default defineConfig({
     structureTool(), 
     media(),
     visionTool(),
+    // tags(),
     imageAssetPickerPlugin(),
     userSelect(),
     singletonTools(),
     //  TODO: Temporary workaround for simplerColorInput visual editing issue – see https://github.com/cositehq/sanity-plugin-simpler-color-input/issues/11
     simplerColorInput(),
     //  TODO: Resolve tag plugin issue
-    // tags()
+    
     linkField(),
     unsplashImageAsset(),
     ptString()
