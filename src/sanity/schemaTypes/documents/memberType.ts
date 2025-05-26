@@ -181,6 +181,7 @@ export const memberType = defineType({
           title: 'Instagram Handle',
           description: 'Provide instagram handle like so "username".',
           type: 'string',
+          group: 'links'
         }),
         // Additional Media
         defineField({
