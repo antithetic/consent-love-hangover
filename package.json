@@ -23,11 +23,15 @@
     "react-dom": "^19.1.0",
     "react-is": "^19.1.0",
     "sanity": "^3.89.0",
+    "sanity-plugin-asset-source-unsplash": "^3.0.3",
     "sanity-plugin-image-asset-picker": "^1.0.0",
+    "sanity-plugin-link-field": "^1.4.0",
     "sanity-plugin-media": "^3.0.2",
     "sanity-plugin-simpler-color-input": "^3.0.1",
     "sanity-plugin-singleton-tools": "^1.1.0",
+    "sanity-plugin-tags": "^2.1.1",
     "sanity-plugin-user-select-input": "^2.0.1",
+    "sanitypress-utils": "^0.0.6",
     "styled-components": "^6.1.18"
   }
 }

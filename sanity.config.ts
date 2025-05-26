@@ -9,6 +9,9 @@ import {imageAssetPickerPlugin} from 'sanity-plugin-image-asset-picker'
 import {userSelect} from 'sanity-plugin-user-select-input'
 import { singletonTools } from 'sanity-plugin-singleton-tools'
 import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
+// import {tags} from 'sanity-plugin-tags'
+import {linkField} from 'sanity-plugin-link-field'
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 
  
 // Temporary fix for the missing type definition
@@ -33,10 +36,12 @@ export default defineConfig({
     imageAssetPickerPlugin(),
     userSelect(),
     singletonTools(),
-    //  simplerColor visual editing issue 
-    // https://github.com/cositehq/sanity-plugin-simpler-color-input/issues/11
-    // TODO: Remove this augmentation when upstream issue is resolved
+    //  TODO: Temporary workaround for simplerColorInput visual editing issue – see https://github.com/cositehq/sanity-plugin-simpler-color-input/issues/11
     simplerColorInput(),
+    //  TODO: Resolve tag plugin issue
+    // tags()
+    linkField(),
+    unsplashImageAsset()
     ],
   schema,
 });
