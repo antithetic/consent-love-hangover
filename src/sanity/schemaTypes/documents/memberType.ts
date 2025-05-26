@@ -28,7 +28,7 @@ export const memberType = defineType({
         defineField({
           name: 'name',
           title: 'Name',
-          description: 'Name to be discplayed on member profile.',
+          description: 'Name to be displayed on member profile.',
           type: 'string',
           group: 'info'
         }),
