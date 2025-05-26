@@ -1,11 +1,11 @@
 import { defineField, defineType } from 'sanity';
-import {UsersIcon} from '@sanity/icons'
+import {UserIcon} from '@sanity/icons'
 
 export const artistType = defineType({
     name: 'artist',
     title: 'Artist',
     type: 'document',
-    icon: UsersIcon,
+    icon: UserIcon,
     fields: [
         defineField({
             name: 'name',
@@ -15,7 +15,8 @@ export const artistType = defineType({
         // Replace "slug" in the array of fields:
 defineField({
     name: 'slug',
-    type: 'Profile Path',
+    type: 'slug',
+    title: 'Profile Path',
     options: {source: 'name'},
     validation: (rule) => rule.required().error(`Required to generate a page on the website`),
     hidden: ({document}) => !document?.name,
@@ -38,6 +39,10 @@ defineField({
             description: 'Upload a portrait photo of the artist',
             type: 'image',
         }),
-
+        defineField({
+            name: 'artistTags',
+            title: 'Artist Tags',
+            type: 'string',
+        })
     ]
 })
