@@ -48,7 +48,7 @@ export const memberType = defineType({
           title: 'Profile Headline',
           description: 'Quote or headline to be displayed on profile.',
           group: 'info',
-          type: 'string',
+          type: 'pt-string',
         }),
         defineField({
           name: 'bio',
