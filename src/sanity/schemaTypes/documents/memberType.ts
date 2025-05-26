@@ -1,5 +1,5 @@
 import { defineType, defineField } from 'sanity'
-import { UserIcon, InfoOutlineIcon, LinkIcon } from '@sanity/icons'
+import { UserIcon, InfoOutlineIcon, LinkIcon, EyeOpenIcon } from '@sanity/icons'
 
 export const memberType = defineType({
     name: 'member',
@@ -17,6 +17,11 @@ export const memberType = defineType({
             name: 'links',
             title: 'Social Links',
             icon: LinkIcon
+        },
+        {
+          name: 'media',
+          title: 'Media',
+          icon: EyeOpenIcon
         }
     ],
     fields: [
@@ -25,6 +30,12 @@ export const memberType = defineType({
             title: 'Name',
             type: 'string',
             group: 'info'
+        }),
+        defineField({
+          name: 'headline',
+          title: 'Headline',
+          type: 'string',
+          group: 'info',
         }),
         defineField({
             name: 'bio',
@@ -60,6 +71,23 @@ export const memberType = defineType({
               ] 
         }),
         defineField({
+          name: 'profilePicture',
+          title: 'Profile Picture',
+          description: 'Upload a picture to be shown alongside your profile.',
+          type: 'image',
+          group: 'info',
+          fields: [
+            defineField({
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative Text',
+              description: 'Important for SEO and accesibility.',
+              validation: (Rule) => Rule.required().error('Alt text is required'),
+              hidden: ({ parent }) => !parent?.asset?._ref,
+            })
+          ]
+        }),
+        defineField({
             name: 'email',
             title: 'Contact Email',
             type: 'email',
@@ -76,14 +104,25 @@ export const memberType = defineType({
           name: 'website',
           title: 'Website',
           description: 'Link to primary website.',
-          type: 'link',
+          type: 'url',
           group: 'links'
         }),
         defineField({
-          name: 'socialLinks',
-          title: 'Social Links',
-          type: 'link',
-          group: 'links'
+          name: 'instagram',
+          title: 'Instagram Handle',
+          description: 'Provide instagram handle like so "username".',
+          type: 'string',
+        }),
+        // Additional Media
+        defineField({
+          name: 'photos',
+          title: 'Additional images',
+          description: 'Upload up to 5 additional images.',
+          group: 'media',
+          type: 'array',
+          of: [{type: 'image'}],
+          validation: (Rule) =>
+            Rule.min(1).max(5).error('You must upload between 1 and 5 works'),
         })
     ]
 })
