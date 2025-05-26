@@ -15,19 +15,19 @@ export const flyerType = defineType({
           }),
       defineField({
         type: "string",
-        name: "Title",
+        name: "title",
         title: "Title",
         validation: (e) => e.required(),
       }),
       defineField({
         type: "date",
-        name: "EventDate",
+        name: "eventDate",
         title: "Event Date",
         validation: (e) => e.required(),
       }),
       defineField({
         type: "text",
-        name: "Description",
+        name: "description",
         title: "Description",
         rows: 3,
       }),
@@ -39,7 +39,7 @@ export const flyerType = defineType({
       }),
       defineField({
         type: "string",
-        name: "Tags",
+        name: "tags",
         title: "Tags",
       })
     ],
