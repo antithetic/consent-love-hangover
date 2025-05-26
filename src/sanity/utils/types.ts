@@ -29,7 +29,7 @@ import type {
     _rev: string;
     _id: string;
     _originalId: string;
-    _type: Exclude<"string", "folder">;
+    _type: Exclude<string, "folder">;
     _updatedAt: string;
     _createdAt: string;
     slug: string | null;
