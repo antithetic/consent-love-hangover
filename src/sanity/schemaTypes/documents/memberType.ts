@@ -77,7 +77,7 @@ export const memberType = defineType({
           type: 'array',
           of: [{type: 'image'}],
           validation: (Rule) =>
-            Rule.min(1).max(5).error('You must upload between 1 and 5 works')
+            Rule.min(1).max(5).error('You must upload between 1 and 5 images.')
         })
     ]
 })
