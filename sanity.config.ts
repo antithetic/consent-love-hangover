@@ -12,6 +12,7 @@ import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 // import {tags} from 'sanity-plugin-tags'
 import {linkField} from 'sanity-plugin-link-field'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+import {ptString} from 'sanity-plugin-pt-string'
 
  
 // Temporary fix for the missing type definition
@@ -41,7 +42,8 @@ export default defineConfig({
     //  TODO: Resolve tag plugin issue
     // tags()
     linkField(),
-    unsplashImageAsset()
+    unsplashImageAsset(),
+    ptString()
     ],
   schema,
 });
