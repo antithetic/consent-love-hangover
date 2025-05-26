@@ -23,8 +23,8 @@ declare module 'sanity-plugin-singleton-tools' {
 }
 
 export default defineConfig({
-  projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
-  dataset: import.meta.env.PUBLIC_SANITY_DATASET,
+  projectId: '6ziojjbn',
+  dataset: 'production',
   name: 'love-hangover',
   title: 'Love Hangover',
   subtitle: 'consent studio',
