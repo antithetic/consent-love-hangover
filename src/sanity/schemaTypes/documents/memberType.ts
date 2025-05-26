@@ -27,6 +27,34 @@ export const memberType = defineType({
     ],
     fields: [
         defineField({
+          name: 'name',
+          title: 'Name',
+          description: 'Name to be discplayed on member profile.',
+          type: 'string',
+          group: 'info'
+        }),
+        defineField({
+          name: 'bio',
+          title: 'Member Bio',
+          type: 'array',
+          group: 'info',
+          of: [
+            {
+              type: 'block',
+              styles: [], // Remove all styles including blockquote
+              lists: [], // Remove all list types (bullet, number, etc.)
+              marks: {
+                decorators: [
+                  { title: 'Strong', value: 'strong' },
+                  { title: 'Emphasis', value: 'em' },
+                  { title: 'Underline', value: 'underline' }
+                ],
+                annotations: [] // Remove all annotations including links
+              }
+            }
+          ]
+        }),
+        defineField({
           name: 'profilePicture',
           title: 'Profile Picture',
           description: 'Upload a picture to be shown alongside your profile.',
