@@ -8,9 +8,11 @@ import { metadataType } from './objects/metadata'
 
 // definitions
 import { pageBuilder } from './definitions/pageBuilder'
+import { richTextContent } from './definitions/richText'
 
 //  Blocks
 import { richText } from './blocks/richText'
+
 
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
@@ -29,5 +31,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
         // Blocks
         richText,
+        richTextContent,
     ]
-  };
+};
