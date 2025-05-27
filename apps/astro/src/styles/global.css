@@ -2,7 +2,7 @@
 
 body {
   font-family: "Josefin Sans Variable", sans-serif;
-  @apply max-h-screen;
+  @apply max-h-screen p-6;
 }
 
 header {
@@ -13,5 +13,5 @@ main {
   @apply h-screen bg-red-300;
 }
 footer {
-  @apply sticky bottom-0;
+  @apply sticky text-6xl bottom-0;
 }
