@@ -15,6 +15,7 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "astro": "^5.8.0",
+    "astro-compressor": "^1.0.0",
     "astro-show-tailwindcss-breakpoint": "^1.0.9",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
