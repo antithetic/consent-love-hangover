@@ -10,7 +10,7 @@ header {
 }
 
 main {
-  @apply h-full bg-red-300;
+  @apply h-screen bg-red-300;
 }
 footer {
   @apply sticky bottom-0;
