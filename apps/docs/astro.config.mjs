@@ -5,6 +5,8 @@ import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 
+import keystatic from '@keystatic/astro';
+
 // https://astro.build/config
 export default defineConfig({
     integrations: [starlight({
@@ -23,5 +25,8 @@ export default defineConfig({
                 autogenerate: { directory: 'reference' },
             },
         ],
-		}), react(), markdoc()],
+		}), 
+		react(), 
+		markdoc(),
+		keystatic()],
 });
