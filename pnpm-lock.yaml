@@ -63,40 +63,6 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3(@astrojs/starlight@0.34.3(astro@5.8.0(@types/node@22.15.3)(idb-keyval@6.2.2)(rollup@4.41.1)(typescript@5.8.2)(yaml@2.8.0)))(astro@5.8.0(@types/node@22.15.3)(idb-keyval@6.2.2)(rollup@4.41.1)(typescript@5.8.2)(yaml@2.8.0))
 
-  apps/sanity:
-    dependencies:
-      '@sanity/vision':
-        specifier: ^3.89.0
-        version: 3.89.0(@babel/runtime@7.27.1)(@codemirror/lint@6.8.5)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      react:
-        specifier: ^18.2.0
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.3.1(react@18.3.1)
-      sanity:
-        specifier: ^3.89.0
-        version: 3.89.0(@emotion/is-prop-valid@1.2.2)(@types/node@22.15.3)(@types/react@18.3.22)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.8.2)(yaml@2.8.0)
-      styled-components:
-        specifier: ^6.1.15
-        version: 6.1.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    devDependencies:
-      '@sanity/eslint-config-studio':
-        specifier: ^5.0.2
-        version: 5.0.2(eslint@9.27.0)(typescript@5.8.2)
-      '@types/react':
-        specifier: ^18.0.25
-        version: 18.3.22
-      eslint:
-        specifier: ^9.9.0
-        version: 9.27.0
-      prettier:
-        specifier: ^3.0.2
-        version: 3.5.3
-      typescript:
-        specifier: ^5.1.6
-        version: 5.8.2
-
   apps/studio:
     dependencies:
       '@sanity/vision':
