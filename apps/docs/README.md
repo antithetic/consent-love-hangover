@@ -17,7 +17,7 @@ pnpm create astro@latest -- --template starlight
 
 Inside your Astro + Starlight project, you'll see the following folders and files:
 
-```
+```bash
 .
 ├── public/
 ├── src/
