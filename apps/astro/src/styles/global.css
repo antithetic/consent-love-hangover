@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
 body {
-    font-family: 'Josefin Sans Variable', sans-serif;
-  }
+  font-family: "Josefin Sans Variable", sans-serif;
+  @apply max-h-screen;
+}
+
+header {
+  @apply sticky text-6xl top-0 -tracking-tighter;
+}
+
+main {
+  @apply h-full bg-red-300;
+}
+footer {
+  @apply sticky bottom-0;
+}
