@@ -7,9 +7,12 @@ import markdoc from '@astrojs/markdoc';
 
 import keystatic from '@keystatic/astro';
 
+import { ion } from "starlight-ion-theme";
+
 // https://astro.build/config
 export default defineConfig({
     integrations: [starlight({
+		
         title: 'Consent Docs',
         social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/antithetic' }],
         sidebar: [
@@ -25,6 +28,9 @@ export default defineConfig({
                 autogenerate: { directory: 'reference' },
             },
         ],
+		plugins: [
+			ion()
+		],
 		}), 
 		react(), 
 		markdoc(),
