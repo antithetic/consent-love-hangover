@@ -1,38 +1,20 @@
 {
   "name": "consent-love-hangover",
-  "type": "module",
-  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
   },
-  "dependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/vercel": "^8.1.4",
-    "@sanity/astro": "^3.2.6",
-    "@sanity/client": "^7.3.0",
-    "@sanity/icons": "^3.7.0",
-    "@sanity/vision": "^3.89.0",
-    "@types/react": "^19.1.5",
-    "@types/react-dom": "^19.1.5",
-    "astro": "^5.8.0",
-    "lucide-react": "^0.511.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-is": "^19.1.0",
-    "sanity": "^3.89.0",
-    "sanity-plugin-asset-source-unsplash": "^3.0.3",
-    "sanity-plugin-image-asset-picker": "^1.0.0",
-    "sanity-plugin-link-field": "^1.4.0",
-    "sanity-plugin-media": "^3.0.2",
-    "sanity-plugin-pt-string": "^0.0.7",
-    "sanity-plugin-simpler-color-input": "^3.0.1",
-    "sanity-plugin-singleton-tools": "^1.1.0",
-    "sanity-plugin-tags": "^2.1.1",
-    "sanity-plugin-user-select-input": "^2.0.1",
-    "sanitypress-utils": "^0.0.6",
-    "styled-components": "^6.1.18"
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.3",
+    "typescript": "5.8.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
   }
 }
