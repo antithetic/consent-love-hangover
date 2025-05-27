@@ -7,7 +7,7 @@ import markdoc from '@astrojs/markdoc';
 
 import keystatic from '@keystatic/astro';
 
-import { ion } from "starlight-ion-theme";
+import { ion } from 'starlight-ion-theme';
 
 // https://astro.build/config
 export default defineConfig({
