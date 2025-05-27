@@ -2,7 +2,7 @@
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-```
+```Next
 pnpm create astro@latest -- --template starlight
 ```
 
@@ -15,7 +15,7 @@ pnpm create astro@latest -- --template starlight
 
 ## 🚀 Project Structure
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Inside your Astro + Starlight project, you'll see the following folders and files:
 
 ```
 .
