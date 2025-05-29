@@ -9,6 +9,8 @@ import showTailwindcssBreakpoint from "astro-show-tailwindcss-breakpoint";
 
 import compressor from "astro-compressor";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -22,4 +24,6 @@ export default defineConfig({
     // It is important that this is the last integration in the integrations property to ensure all the generated files are compressed.
     compressor(),
   ],
+
+  adapter: vercel(),
 });
