@@ -1,8 +1,10 @@
 ---
 import { Lenis } from 'lenis'
 ---
-
-const lenis = new Lenis();
+<style>
+  import { Lenis } from 'lenis';
+  
+  const lenis = new Lenis();
 
 function raf(time) {
   lenis.raf(time);
@@ -10,3 +12,5 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+</style>
