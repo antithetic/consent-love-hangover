@@ -38,5 +38,6 @@ export default defineConfig({
       markdoc(),
       keystatic()],
 
+      
   adapter: vercel(),
 });
