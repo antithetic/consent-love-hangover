@@ -1,12 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": [
-    "dist",
-    "node_modules",
-    ".astro",
-    ".vercel",
-    ".vscode",
-    ".cache"
-  ]
+  "exclude": ["dist", "node_modules", ".astro", ".vercel", ".vscode", ".cache"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
+      "@/*": ["src/*"]
+    }
+  }
 }
