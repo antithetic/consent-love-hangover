@@ -30,7 +30,7 @@ export default [
       'prettier/prettier': 'error',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
-      'typescript/consistent-type-definitions': 'error',
+      '@typescript-eslint/consistent-type-definitions': 'error',
       'import/no-default-export': 'error',
     },
   },
