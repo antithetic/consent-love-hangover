@@ -9,7 +9,8 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "lint": "eslint . --fix"
   },
   "keywords": [
     "sanity"
@@ -25,7 +26,10 @@
     "@sanity/eslint-config-studio": "^5.0.2",
     "@types/react": "^18.0.25",
     "eslint": "^9.9.0",
-    "prettier": "^3.0.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.5.3",
     "typescript": "^5.1.6"
   },
   "prettier": {
